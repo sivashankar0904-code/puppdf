@@ -1,0 +1,21 @@
+{
+  "name": "html2pdf",
+  "version": "1.0.0",
+  "description": "Convert HTML files to PDF using headless Chrome (Puppeteer)",
+  "main": "index.js",
+  "bin": {
+    "html2pdf": "./index.js"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "minimist": "^1.2.8",
+    "puppeteer": "^22.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": ["html", "pdf", "puppeteer", "cli", "converter"],
+  "license": "MIT"
+}
