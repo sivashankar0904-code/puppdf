@@ -15,7 +15,7 @@ Convert any HTML file to a PDF using headless Chrome (Puppeteer).
 ### Option 1 — Global install (recommended)
 
 ```bash
-cd html2pdf
+cd puppdf
 npm install -g .
 html2pdf report.html
 ```
@@ -97,7 +97,7 @@ html2pdf report.html -o out/report.pdf -f Letter -m none --no-header --wait 500
 ## Project structure
 
 ```
-html2pdf/
+puppdf/
   index.js      CLI entry point — argument parsing, validation, orchestration
   convert.js    Core Puppeteer logic — exported as async convert(opts)
   run.sh        Bash launcher (Mac / Linux / Git Bash)
