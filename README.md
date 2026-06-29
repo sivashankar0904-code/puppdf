@@ -1,4 +1,4 @@
-# html2pdf
+# puppdf
 
 Convert any HTML file to a PDF using headless Chrome (Puppeteer).
 
@@ -17,7 +17,7 @@ Convert any HTML file to a PDF using headless Chrome (Puppeteer).
 ```bash
 cd puppdf
 npm install -g .
-html2pdf report.html
+puppdf report.html
 ```
 
 ### Option 2 — Bash launcher (no install)
@@ -37,7 +37,7 @@ bash run.sh report.html -o output.pdf
 ## Usage
 
 ```
-html2pdf <input.html> [options]
+puppdf <input.html> [options]
 ```
 
 | Flag | Short | Default | Description |
@@ -55,19 +55,19 @@ html2pdf <input.html> [options]
 
 ```bash
 # Basic — outputs report.pdf next to report.html
-html2pdf report.html
+puppdf report.html
 
 # Custom output path
-html2pdf report.html -o out/report.pdf
+puppdf report.html -o out/report.pdf
 
 # A3 page, compact margins
-html2pdf report.html -o out/report.pdf -f A3 -m compact
+puppdf report.html -o out/report.pdf -f A3 -m compact
 
 # No header/footer, extra wait for slow animations
-html2pdf report.html --no-header --wait 3000
+puppdf report.html --no-header --wait 3000
 
 # Full set of options
-html2pdf report.html -o out/report.pdf -f Letter -m none --no-header --wait 500
+puppdf report.html -o out/report.pdf -f Letter -m none --no-header --wait 500
 ```
 
 ---

@@ -43,10 +43,10 @@ function parseArgs(argv) {
 
 function printHelp() {
   console.log(`
-html2pdf — Convert an HTML file to PDF using headless Chrome
+puppdf — Convert an HTML file to PDF using headless Chrome
 
 Usage:
-  html2pdf <input.html> [options]
+  puppdf <input.html> [options]
 
 Options:
   -o, --output <path>    Output PDF path (default: same dir/name as input, .pdf)
@@ -57,10 +57,10 @@ Options:
   -h, --help             Show this help
 
 Examples:
-  html2pdf report.html
-  html2pdf report.html -o out/report.pdf
-  html2pdf report.html -o out/report.pdf -f A3 -m compact
-  html2pdf report.html --no-header --wait 3000
+  puppdf report.html
+  puppdf report.html -o out/report.pdf
+  puppdf report.html -o out/report.pdf -f A3 -m compact
+  puppdf report.html --no-header --wait 3000
 `);
 }
 
@@ -73,7 +73,7 @@ async function main() {
   }
 
   if (args._.length === 0) {
-    console.error('[html2pdf] Error: no input file specified.\n');
+    console.error('[puppdf] Error: no input file specified.\n');
     printHelp();
     process.exit(1);
   }
@@ -82,11 +82,11 @@ async function main() {
   const VALID_MARGINS = ['normal', 'compact', 'none'];
 
   if (!VALID_FORMATS.includes(args.format)) {
-    console.error(`[html2pdf] Invalid --format "${args.format}". Choose from: ${VALID_FORMATS.join(', ')}`);
+    console.error(`[puppdf] Invalid --format "${args.format}". Choose from: ${VALID_FORMATS.join(', ')}`);
     process.exit(1);
   }
   if (!VALID_MARGINS.includes(args.margin)) {
-    console.error(`[html2pdf] Invalid --margin "${args.margin}". Choose from: ${VALID_MARGINS.join(', ')}`);
+    console.error(`[puppdf] Invalid --margin "${args.margin}". Choose from: ${VALID_MARGINS.join(', ')}`);
     process.exit(1);
   }
 
@@ -94,7 +94,7 @@ async function main() {
   const inputAbs = path.resolve(process.cwd(), inputRaw);
 
   if (!fs.existsSync(inputAbs)) {
-    console.error(`[html2pdf] Input file not found: ${inputAbs}`);
+    console.error(`[puppdf] Input file not found: ${inputAbs}`);
     process.exit(1);
   }
 
@@ -123,7 +123,7 @@ async function main() {
       wait: args.wait,
     });
   } catch (err) {
-    console.error(`[html2pdf] Error: ${err.message}`);
+    console.error(`[puppdf] Error: ${err.message}`);
     process.exit(1);
   }
 }

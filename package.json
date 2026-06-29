@@ -1,10 +1,10 @@
 {
-  "name": "html2pdf",
+  "name": "puppdf",
   "version": "1.0.0",
   "description": "Convert HTML files to PDF using headless Chrome (Puppeteer)",
   "main": "index.js",
   "bin": {
-    "html2pdf": "./index.js"
+    "puppdf": "./index.js"
   },
   "scripts": {
     "start": "node index.js"

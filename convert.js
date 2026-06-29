@@ -11,7 +11,7 @@ function ensurePuppeteer() {
   try {
     require.resolve('puppeteer');
   } catch {
-    console.log('[html2pdf] puppeteer not found — installing...');
+    console.log('[puppdf] puppeteer not found — installing...');
     execSync('npm install puppeteer', {
       cwd: path.join(__dirname),
       stdio: 'inherit',
@@ -130,7 +130,7 @@ async function convert(opts) {
       footerTemplate,
     });
 
-    console.log(`[html2pdf] PDF saved to: ${output}`);
+    console.log(`[puppdf] PDF saved to: ${output}`);
   } finally {
     await browser.close();
   }
